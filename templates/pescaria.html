@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Pescarias Organizadas</h5>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<div class="card card-body">
+							<form method="get">
+								{{myFilter.form}}
+
+								<button class="btn btn-primary" type="submit">Pesquisar</button>
+						  </form>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Organizador</th>
+							<th>Amigos</th>
+							<th>Localizacao</th>
+                            <th>Data</th>
+                            <th>Horario</th>
+						</tr>
+
+						{% for i in pescarias %}
+						<tr>
+							<td>{{i.organizador}}</td>
+							<td>{{i.amigos}}</td>
+							<td>{{i.localizacao}}</td>
+                            <td>{{i.dia}}</td>
+                            <td>{{i.hora}}</td>
+						</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+{% endblock %}

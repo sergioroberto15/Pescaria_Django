@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>ID: {{usuario.id}}, Usuário: {{usuario.nome}} {{usuario.sobrenome}}</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'atualizar_usuario' usuario.id %}">Atualizar Usuário</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'deletar_usuario' usuario.id %}">Deletar Usuário</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Informação do Usuário</h5>
+			<hr>
+			<p>CPF: {{usuario.cpf}} </p>
+			<p>Telefone: {{usuario.telefone}} </p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Adicionar</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'criar_pescado' %}">Adicionar Pescado</a>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'criar_pescaria' %}">Adicionar Pescaria</a>
+
+		</div>
+	</div>
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<h1>Peixes Pescados</h1>
+				<tr>
+					<th>Peixe</th>
+					<th>Peso(kg)</th>
+					<th>Tamanho(cm)</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+				</tr>
+
+				{% for pescado in pescados %}
+				<tr>
+					<td>{{pescado.nome}}</td>
+					<td>{{pescado.massa}}</td>
+					<td>{{pescado.tamanho}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'atualizar_pescado' pescado.id %}">Atualizar</a> </td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'deletar_pescado' pescado.id %}">Remover</a> </td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<h1>Pescarias</h1>
+				<tr>
+					<th>Organizador</th>
+					<th>Acompanhantes</th>
+					<th>Localização</th>
+					<th>Data</th>
+					<th>Horário</th>
+					<th>Atualizar</th>
+					<th>Remover</th>
+				</tr>
+
+				{% for pescaria in pescarias %}
+				<tr>
+					<td>{{pescaria.organizador}}</td>
+					<td>{{pescaria.amigos}}</td>
+					<td>{{pescaria.localizacao}}</td>
+					<td>{{pescaria.dia}}</td>
+					<td>{{pescaria.hora}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'atualizar_pescaria' pescaria.id %}">Atualizar</a> </td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'deletar_pescaria' pescaria.id %}">Remover</a> </td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Ranking por peso</h5>
+					<p>A cada 6 meses a lista será checada e os três primeiros irão ganhar prêmios que serão enviados
+						para o endereço registrado.</p>
+					<ul>Primeiro lugar: 2 pastéis e 1 caldo de cana</ul>
+					<ul>Segundo lugar: 3 pirulitos pop</ul>
+					<ul>Terceiro lugar: 1 beijo e 1 abraço</ul>
+
+				</div>
+				<br>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Nome</th>
+							<th>Peso(kg)</th>
+							<th>Tamanho(cm)</th>
+							<th>Pescador</th>
+						</tr>
+
+						{% for i in pescados %}
+						<tr>
+							<td>{{i.nome}}</td>
+							<td>{{i.massa}}</td>
+							<td>{{i.tamanho}}</td>
+							<td>{{i.quemPescou}}</td>
+						</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+{% endblock %}
