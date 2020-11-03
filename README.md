@@ -2,7 +2,7 @@
 
 Eu tinha um conhecimento infímo de banco de dados e ainda menos conhecimento sobre django, além de ter estado relativamente ocupado durante a semana, então não consegui fazer tudo o que pedia no teste enquanto estudava, mas fiz o possível e acho que é melhor do que não mandar nada kkk
 
-Há um pdf no repositório chamado Produto_APescaria que é como se fosse um pequeno e resumido pitch de um produto.
+Há um pdf no repositório chamado Produto_APescaria que é como se fosse um pequeno e resumido pitch de um produto. O Diagrama ER também está no início e nomeado como Diagrama ER mesmo.
 
 Caso queiram verificar a parte do admin, o superusuário desse projeto é
 login: sergioroberto15
